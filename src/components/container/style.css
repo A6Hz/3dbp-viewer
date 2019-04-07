@@ -1,0 +1,11 @@
+.card {
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: #f3f3f3;
+}
+
+.active {
+  background-color: red !important;
+}
