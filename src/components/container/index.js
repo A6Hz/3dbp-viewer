@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import cx from "classnames";
-import "./style.css";
 
 class index extends Component {
   render() {
     return (
       <div
-        className={cx("card", { active: this.props.active })}
+        className={cx("card shadow-sm", { active: this.props.active })}
         onClick={this.props.onClick}
       >
-        <div>{this.props.type}</div>
-        <div>{this.props.name}</div>
+        <div className="p-2">
+          <div>{this.props.type}</div>
+          <div>{this.props.name}</div>
+        </div>
       </div>
     );
   }

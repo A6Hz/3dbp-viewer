@@ -19,19 +19,14 @@ class App extends Component {
   createItems(items, id) {
     let itemsTemp = [];
     items.forEach((value, key) => {
-      console.log(value);
-      let active = false;
-      if (key === id) {
-        active = true;
-      }
-
+      let active = key === id ? true : false;
       itemsTemp.push(
         <Item
           name={value.name}
           type={0}
           key={key}
           active={active}
-          onClick={() => this.createItems(key)}
+          onClick={() => this.createItems(items, key)}
         />
       );
     });
@@ -47,7 +42,6 @@ class App extends Component {
         active = true;
         this.createItems(value.items, 0);
       }
-
       containerTemp.push(
         <Container
           name={value.name}
@@ -72,9 +66,12 @@ class App extends Component {
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-2">{this.state.container}</div>
-          <div className="col-md-2">{this.state.items}</div>
-          <div className="col-md-12">
-            <div ref={element => (this.threeRootElement = element)} />
+          <div className="col-md-2">{this.state.item}</div>
+          <div className="col-md-8">
+            <div
+              ref={element => (this.threeRootElement = element)}
+              style={{ height: "100%", background: "gray" }}
+            />
           </div>
         </div>
       </div>

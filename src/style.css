@@ -1,0 +1,41 @@
+.card {
+  cursor: pointer;
+  border: none !important;
+  border-radius: 0px !important;
+
+  animation: fade 0.5s;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.card:hover {
+  background-color: #f3f3f3;
+  transition: background-color 0.5s;
+}
+
+.active {
+  background-color: #282c34;
+  color: #fff;
+}
+.active:hover {
+  background-color: #282c34;
+  color: #fff;
+}
+
+body {
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
